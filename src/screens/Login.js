@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  ShadowPropTypesIOS,
+} from 'react-native';
+import UpStateInung from './UpStateInung';
 
 const Login = () => {
   return (
@@ -13,12 +20,14 @@ const Login = () => {
       }}>
       <View
         style={{
-          flex: 1,
+          flexGrow: 1,
+          padding: 5,
           backgroundColor: 'gray',
           //justifyContent: 'center',
           //alignContent: 'center',
         }}>
         <Text>ini dia</Text>
+        <UpStateInung />
       </View>
       <View style={{flex: 2, backgroundColor: 'pink'}} />
       <View style={{flex: 3, backgroundColor: 'skyblue'}} />
