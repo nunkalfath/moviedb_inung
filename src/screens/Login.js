@@ -22,16 +22,17 @@ const Login = () => {
         style={{
           flexGrow: 1,
           padding: 5,
-          backgroundColor: 'gray',
-          //justifyContent: 'center',
-          //alignContent: 'center',
+          backgroundColor: 'lightgray',
+          justifyContent: 'center',
+          alignItems: 'center',
         }}>
-        <Text>ini dia</Text>
+        <Text style={{fontSize: 18}}>Welcome to MovieDB by Nunk</Text>
+      </View>
+      <View style={{flexGrow: 2, padding: 5, backgroundColor: 'white'}}>
         <UpStateInung />
       </View>
-      <View style={{flex: 2, backgroundColor: 'pink'}} />
-      <View style={{flex: 3, backgroundColor: 'skyblue'}} />
-      <Text>Ini aku </Text>
+      <View style={{flex: 3, backgroundColor: 'navy'}} />
+      <Text style={{fontSize: 8}}>Movie DB Project by nunk </Text>
     </View>
   );
 };
