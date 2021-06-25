@@ -19,7 +19,7 @@ const UpStateInung = () => {
   return (
     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
       <Text>Nama = {name}</Text>
-      <Text>Email ={email} </Text>
+      <Text>Email = {email} </Text>
       <Text>Sign In</Text>
       <TextInput
         style={styles.input}
