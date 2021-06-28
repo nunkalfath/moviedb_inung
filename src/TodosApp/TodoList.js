@@ -16,16 +16,25 @@ export const TodoList = () => {
   const [data, setData] = useState([{id: 1, title: 'Task 1', active: false}]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [title, setTitle] = useState('');
+  const renderItem = ({item, index}) => {
+    console.log({index});
+    // const { item } = props;
+    // const item = props.item;
 
-  const renderItem = ({item}) => {
     return (
-      <View>
+      <View style={styles.TaskItem}>
         <CheckBox
           disabled={false}
           value={item.active}
           onValueChange={newValue => setToggleCheckBox(newValue, index)}
         />
-        <Text>{item.title}</Text>
+        <Text
+          style={[
+            styles.SubTitle,
+            {textDecorationLine: item.active ? 'line-through' : 'none'},
+          ]}>
+          {item.title}
+        </Text>
       </View>
     );
   };
@@ -39,7 +48,9 @@ export const TodoList = () => {
   };
   const setToggleCheckBox = (value, index) => {
     let newArr = [...data];
+    console.log({newArr}, {index});
     newArr[index].active = !newArr[index].active;
+    // newArr[index].active = value;
     setData(newArr);
   };
   return (
@@ -82,7 +93,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -101,7 +112,7 @@ const styles = StyleSheet.create({
   modalContentWrapper: {
     height: '50%',
     marginTop: 'auto',
-    backgroundColor: 'green',
+    backgroundColor: 'skyblue',
     padding: 10,
   },
   closeIcon: {
@@ -123,5 +134,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginTop: 30,
     padding: 15,
+  },
+  TaskItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+    padding: 15,
+  },
+  SubTitle: {
+    fontSize: 20,
+    marginLeft: 15,
   },
 });
